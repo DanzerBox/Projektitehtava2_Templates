@@ -1,6 +1,6 @@
 # Templates APP
 
-GuestBook on sovellus, jolla voit tallentaa viestin luetteloon, eli kirjastoon. Kaikki tiedot tallennetaan JSON-tiedostoon. 
+ sovellus, jolla voit hakea tiedot luetteloon, eli kirjastoon. Kaikki tiedot tallennetaan JSON-tiedostoon. 
 
 # ScreenShoot
 
