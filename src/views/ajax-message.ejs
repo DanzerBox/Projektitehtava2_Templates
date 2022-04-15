@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      $(function(){
+
+var $guests = $('#guests');
+var $user = $('#user');
+var $land = $('#land');
+var $letter = $('#letter');
+
+function addGuest(guest){
+    $guests.append('<li>user: '+ guest.user +', land: '+ guest.land +', letter: '+guest.letter+'</li>');
+}
+
+$.ajax({
+
+    type: 'GET',
+    url: '/guests.json',
+    success: function(guests) {
+       $.each(guests, function(id, user, land, letter){
+           addGuest(guests);
+       });
+    },
+    error: function(){
+        alert('error loading guests');
+    }
+});
+$('#add-guest').on('click', function(){
+    var guest = {
+        user: $user.val(),
+        land: $land.val(),
+    };
+    $.ajax({
+        type: 'POST2',
+        url: '/guests.json',
+        data: guest,
+        success: function(newGuest){
+           addGuest(newGuest);
+        },
+        error: function(){
+            alert('error saving guests');
+        }
+    })
+});
+});
+    </script>
+    <title>Document</title>
+    
+<head>
+    <%- include('partials/header') %>
+      <title>New AJAX Message</title>
+  </head>
+  
+  <body>
+
+    <div class="row">
+      
+      <div class="column">
+        <div class="col-md-3 offset-md-3">
+  
+        <h2 class="text-center">Write New AJAX message</h2>
+    
+        <form method="POST2"> 
+          <div class="form-group">
+            <label for="title">User</label>
+            <input type="text" name="user" id="user" class="form-control"
+            placeholder="Write your user.." required>
+          </div>
+    
+          <div class="form-group">
+            <label for="title">Land</label>
+            <input type="text" name="land" id="land" class="form-control"
+            placeholder="Write your land.." required>
+          </div>
+    
+          <div class="form-group">
+            <label for="title">Letter</label>
+            <textarea name="letter" id="letter"  rows="10" class="form-control" placeholder="Write your letter.."
+            required></textarea>
+          </div>
+    
+          <div class="form-group">
+            <label for="title">button to send</label>
+            <input id="add-guest" type="submit" value="Post Entry" class="form-control btn btn-primary">
+        </div>
+
+
+        </div>
+    
+     </div>
+     <div class="column">
+      <div class="col-md-3 offset-md-6"> 
+       <ul id="guests"></ul>
+        <h2>There is new Guests</h2>
+      
+      </div>
+    </div>
+    </div>
+      <%- include('partials/footer')%>
+  </body>
+
+</html>
