@@ -5,7 +5,7 @@ const { renderGuestbook, renderNewMessage, createNewMessage,} = require('../cont
 
 router.get('/', renderGuestbook);
 
-router.get('/infoe', renderNewMessage);
+router.get('/new-message', renderNewMessage);
 
 router.post('/info', createNewMessage);
 

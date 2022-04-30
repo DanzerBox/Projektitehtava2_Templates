@@ -1,6 +1,6 @@
 # Templates APP
 
- sovellus, jolla voit hakea tiedot luetteloon, eli kirjastoon. Kaikki tiedot tallennetaan JSON-tiedostoon. 
+GuestBook on sovellus, jolla voit tallentaa viestin luetteloon, eli kirjastoon. Kaikki tiedot tallennetaan JSON-tiedostoon. 
 
 # ScreenShoot
 
@@ -12,7 +12,7 @@ Lisään myöhemmin jotain lisää..
 
 # Environment Variables
 
-- `PORT`, Serverin portti on `5000`.
+- `PORT`, Serverin portti on `4000`.
 
 
 # Hostaus omalla koneella
@@ -23,6 +23,6 @@ Lisään myöhemmin jotain lisää..
 
 3. Kirjoita terminaaliin `npm start`.
 
-4. Heti kun saat asennettua ja startattua, vieraile sitten: `http://localhost:5000` selaimessa.
+4. Heti kun saat asennettua ja startattua, vieraile sitten: `http://localhost:4000` selaimessa.
 
 

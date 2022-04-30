@@ -62,7 +62,7 @@ function getMovies(searchText){
 //valitaan elokuva id sijainnin mukaan ja mahdollisesti tallentaa istunnon.
 function movieSelected(id){
     sessionStorage.setItem('movieId', id);
-    window.location = 'info.html';
+    window.location = 'new-message';
     return false;
 }
 
