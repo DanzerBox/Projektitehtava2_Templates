@@ -20,7 +20,7 @@
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./">Takaisin alkuun</a>
+                    <a class="btn btn-outline-dark" href="./">Back to Search</a>
                 </div>
             </div>
         </nav>
@@ -28,7 +28,7 @@
 
     <div class="container">
         
-            <h2 class="text-center">Elokuvan tai pelin tiedot</h2>
+            <h2  class="col-md-6 ">Information:</h2>
             
         </div>
     </div>
@@ -70,22 +70,23 @@
                 <div class="col-md-8">
                     <h2>${movie.Title}</h2>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Genre: ${movie.Genre} </li>
-                        <li class="list-group-item"> Julkaistu: ${movie.Released} </li>
-                        <li class="list-group-item"> Ikäraja: ${movie.Rated} </li>
-                        <li class="list-group-item"> IMBD Arvio: ${movie.imdbRating} </li>
-                        <li class="list-group-item"> Ohjaaja: ${movie.Director} </li>
-                        <li class="list-group-item"> Käsikirjoittajat: ${movie.Writer} </li>
-                        <li class="list-group-item"> Pääosissa: ${movie.Actors} </li>
+                        <li class="list-group-item"> Genre: ${movie.Genre} </li>
+                        <li class="list-group-item"> Released: ${movie.Released} </li>
+                        <li class="list-group-item"> Rated: ${movie.Rated} </li>
+                        <li class="list-group-item"> IMBD Rating: ${movie.imdbRating} </li>
+                        <li class="list-group-item"> Director: ${movie.Director} </li>
+                        <li class="list-group-item"> Writer: ${movie.Writer} </li>
+                        <li class="list-group-item"> Actors: ${movie.Actors} </li>
                     </ul>
                 </div>
+                
             </div>
             <div class="jumbotron">
                 <div class="movieDiv">
-                    <h3> Elokuvan Synopsis </h3>
+                    <h3>Synopsis </h3>
                     ${movie.Plot}
                     <hr>
-                    <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">Katso IMDB:stä</a>
+                    <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-warning">Check more in IMDB</a>
                 </div>
             </div>
         `;
@@ -99,35 +100,7 @@
 
 }
 </script>
-  <div class="col-md-6 offset-md-3">
-
-    <h2 class="text-center">Write New Guest & Message</h2>
-
-    <form method="POST"> <!-- action="/new-entry"> muista vaihtaa new-entry - messageks, myös entries.routes.js-->
-      <div class="form-group">
-        <label for="title">Username</label>
-        <input type="text" name="username" id="username" class="form-control"
-         placeholder="Write your username.." required>
-      </div>
-
-      <div class="form-group">
-        <label for="title">Country</label>
-        <input type="text" name="country" id="country" class="form-control"
-         placeholder="Write your country.." required>
-      </div>
-
-      <div class="form-group">
-        <label for="title">New Message</label>
-        <textarea name="message" id="message"  rows="10" class="form-control" placeholder="Write your message.."
-         required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="title">button to send</label>
-        <input type="submit" value="Post Entry" class="btn btn-primary">
-      </div>
-
-  </div>
+  <br>
 
     <%- include('partials/footer')%>
 </body>

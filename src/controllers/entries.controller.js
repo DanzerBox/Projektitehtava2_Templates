@@ -8,6 +8,8 @@ const renderNewMessage= (req, res) =>{
     res.render('new-message', {entries});
 };
 
+
+
 const createNewMessage= (req, res) =>{
     const newMessage = {
        title: req.body.username,
@@ -16,7 +18,7 @@ const createNewMessage= (req, res) =>{
        
     };
     entries.push(newMessage);
-    res.redirect('/');
+    res.redirect('/info');
 
 };
 
